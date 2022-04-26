@@ -3,13 +3,14 @@ import LinkCard from "../Components/LinkCard/LinkCard";
 import SubmitNavigation from "../Components/SubmitNavigation/SubmitNavigation";
 import { removeLink, upvoteLink, downvoteLink } from "../Features/LinkSlice";
 import { useSelector, useDispatch } from "react-redux";
+import AnimatedPage from "../Components/AnimatedPage";
 
 function Home() {
   const { linkList } = useSelector((state) => state.links.value);
   const dispatch = useDispatch();
 
-  const handleDelete = (linkToBeRemoved) => {
-    dispatch(removeLink(linkToBeRemoved));
+  const handleDelete = (linkToRemove) => {
+    dispatch(removeLink(linkToRemove));
   };
 
   const handleUpvote = (linkToUpvote) => {
@@ -21,7 +22,7 @@ function Home() {
   };
 
   return (
-    <section className="o-container">
+    <AnimatedPage direction={"rtl"}>
       <SubmitNavigation />
       <div className="o-container__cards">
         {linkList.map((linkItem) => (
@@ -34,7 +35,7 @@ function Home() {
           />
         ))}
       </div>
-    </section>
+    </AnimatedPage>
   );
 }
 
