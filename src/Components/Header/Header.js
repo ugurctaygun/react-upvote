@@ -7,7 +7,7 @@ function Header() {
         <ul>
           <li>
             <a id="logo" href="/" rel="home">
-              Hepsiburada
+              hepsiburada<span>.com</span>
             </a>
           </li>
           <li>

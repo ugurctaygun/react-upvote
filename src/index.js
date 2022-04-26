@@ -18,7 +18,7 @@ const store = configureStore({
 });
 
 if (persistedState) {
-  let { linkList } = persistedState.tasks.value;
+  let { linkList } = persistedState.links.value;
   store.dispatch(
     updateState({
       linkList: linkList,

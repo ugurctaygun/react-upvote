@@ -1,18 +1,35 @@
 header{
     nav{
+        margin: 0 25px;
         border-bottom: 1px solid;
         ul{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 15px;
+            padding: 0;
             list-style: none;
+            a{
+                text-decoration: none;
+                color: inherit;
+            }
+            #logo{
+                font-size: 52px;
+                font-weight: bold;
+                letter-spacing: -2px;
+                color: $secondaryTextColor;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $primaryTextColor;
+                span{
+                    color: $primaryTextColor;
+                    -webkit-text-stroke-width: 0;
+                }
+            }
             h2{
                 font-weight: normal;
             }
-            span{
-                font-weight: 100;
-            }
+            @media (max-width: 1000px) {
+                flex-direction: column;
+              }
         }
     }
 }
