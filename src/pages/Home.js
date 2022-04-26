@@ -1,7 +1,12 @@
 import React from "react";
+import SubmitNavigation from "../Components/SubmitNavigation/SubmitNavigation";
 
 function Home() {
-  return <div>Home</div>;
+  return (
+    <section className="o-container">
+      <SubmitNavigation />
+    </section>
+  );
 }
 
 export default Home;

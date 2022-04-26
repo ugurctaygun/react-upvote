@@ -1,0 +1,9 @@
+.o-container {
+    padding: 0 150px;
+    margin: 50px auto;
+    max-width: 33vw;
+    @media (max-width: 1000px) {
+      padding: 20px 0;
+      max-width: 100%;
+    }
+  }

@@ -1,1 +1,8 @@
-@import "../Components/Header/header.scss"
+body{
+    font-family: -apple-system,BlinkMacSystemFont,Arial,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif!important;
+}
+
+@import "./container.scss";
+
+@import "../Components/Header/header.scss";
+@import "../Components/SubmitNavigation/submitNavigation.scss"

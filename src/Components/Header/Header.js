@@ -6,13 +6,15 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a id="logo" href="." rel="home">
+            <a id="logo" href="/" rel="home">
               Hepsiburada
             </a>
           </li>
           <li>
-            {" "}
-            <h2>Link Vote Challange</h2>
+            <h2>
+              <strong>Link</strong>
+              <span>Vote</span> Challange
+            </h2>
           </li>
         </ul>
       </nav>
