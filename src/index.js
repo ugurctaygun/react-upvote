@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./Styles/main.scss";
 import { configureStore } from "@reduxjs/toolkit";
@@ -30,11 +30,12 @@ store.subscribe(() => {
   saveState(store.getState());
 });
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
   <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );

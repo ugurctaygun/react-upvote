@@ -10,7 +10,12 @@ function SubmitForm() {
     event.preventDefault();
     const linkName = event.target.name;
     const linkUrl = event.target.url;
-    const linkObject = { name: linkName.value, url: linkUrl.value };
+    const linkObject = {
+      id: Math.floor(Math.random() * 1000),
+      name: linkName.value,
+      url: linkUrl.value,
+      votes: 0,
+    };
     dispatch(
       updateState({
         ...links,

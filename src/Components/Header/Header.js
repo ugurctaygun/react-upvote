@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -6,9 +7,9 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <a id="logo" href="/" rel="home">
+            <Link id="logo" to="/" rel="home">
               hepsiburada<span>.com</span>
-            </a>
+            </Link>
           </li>
           <li>
             <h2>
