@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import "./Styles/main.scss";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import { loadState, saveState } from "./features/LocalStorage";
-import linkReducer from "./features/LinkSlice";
-import { updateState } from "./features/LinkSlice";
+import { loadState, saveState } from "./Features/LocalStorage";
+import linkReducer from "./Features/LinkSlice";
+import { updateState } from "./Features/LinkSlice";
 
 const persistedState = loadState();
 
