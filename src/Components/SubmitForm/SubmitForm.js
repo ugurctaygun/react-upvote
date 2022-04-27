@@ -26,6 +26,8 @@ function SubmitForm() {
         linkList: [linkObject, ...links.linkList],
       })
     );
+    linkName.value = "";
+    linkUrl.value = "";
     toast.success(`${linkName.value} added.`, {
       className: "c-toast c-toast--success",
     });

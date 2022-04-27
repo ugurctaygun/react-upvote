@@ -1,7 +1,8 @@
 .o-container {
     padding: 0 150px;
     margin: 50px auto;
-    max-width: 33vw;
+    max-width: 30vw;
+    min-width: 450px;
     @media (max-width: 1000px) {
       padding: 20px 0;
       max-width: 100%;
@@ -9,6 +10,6 @@
     &__cards{
       margin: 25px 0;
       padding: 25px 0;
-      border-top: 3px solid $secondaryBackgroundColor;
+      border-top: 2px solid $secondaryBackgroundColor;
     }
   }

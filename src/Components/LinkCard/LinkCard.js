@@ -15,7 +15,9 @@ const LinkCard = ({ ...props }) => {
       <div className="c-card__container">
         <div className="c-card__info">
           <h4>{props.link.name}</h4>
-          <span>({props.link.url})</span>
+          <a href={props.link.url} target="_blank" rel="noreferrer">
+            ({props.link.url})
+          </a>
         </div>
 
         <div className="c-card__vote">

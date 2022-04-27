@@ -3,7 +3,13 @@ const Modal = ({ modalStatus, toggleModal, name, id, deleteLink }) => {
     return (
       <>
         <div className="c-modal__overlay"></div>
-        <div className="c-modal__content">
+        <div
+          className={
+            modalStatus
+              ? `c-modal__content c-modal__content--slide`
+              : `c-modal__content`
+          }
+        >
           <div className="c-modal__header">
             <p>Remove Link</p>
             <p style={{ cursor: "pointer" }} onClick={() => toggleModal()}>

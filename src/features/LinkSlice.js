@@ -22,12 +22,20 @@ export const linkSlice = createSlice({
       if (item) {
         item.votes += 1;
       }
+      state.value.linkList = state.value.linkList.filter(
+        (item) => item.id !== payload
+      );
+      state.value.linkList = [item, ...state.value.linkList];
     },
     downvoteLink: (state, { payload }) => {
       const item = state.value.linkList.find((item) => item.id === payload);
       if (item) {
         item.votes -= 1;
       }
+      state.value.linkList = state.value.linkList.filter(
+        (item) => item.id !== payload
+      );
+      state.value.linkList = [item, ...state.value.linkList];
     },
     sortDescending: (state) => {
       state.value.linkList.sort(

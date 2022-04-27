@@ -10,7 +10,7 @@ import Filter from "../Components/Filter/Filter";
 import Pagination from "../Components/Pagination/Pagination";
 import Modal from "../Components/Modal/Modal";
 
-let PageSize = 3;
+let PageSize = 5;
 
 function Home() {
   const { linkList } = useSelector((state) => state.links.value);
