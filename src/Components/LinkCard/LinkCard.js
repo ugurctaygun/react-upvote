@@ -18,6 +18,12 @@ const LinkCard = ({ ...props }) => {
           <a href={props.link.url} target="_blank" rel="noreferrer">
             ({props.link.url})
           </a>
+          {props.link.previewUrl && (
+            <img
+              src={`http://localhost:5000${props.link.previewUrl}`}
+              alt="preview"
+            />
+          )}
         </div>
 
         <div className="c-card__vote">
