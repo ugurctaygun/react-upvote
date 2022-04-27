@@ -22,7 +22,7 @@ function SubmitForm() {
 
   const handlePreview = (urlFromInput) => {
     let parsedUrl;
-    fetch("http://localhost:5000/api", {
+    fetch("https://upvote-case-backend.herokuapp.com/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +42,6 @@ function SubmitForm() {
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      console.log(urlInput);
       if (urlInput && isValidURL(urlInput)) {
         handlePreview(urlInput);
       }
@@ -118,7 +117,10 @@ function SubmitForm() {
         {preview && (
           <div className="c-form__section c-form__preview">
             <h3>Link Preview</h3>
-            <img src={`http://localhost:5000${preview}`} alt="preview" />
+            <img
+              src={`https://upvote-case-backend.herokuapp.com${preview}`}
+              alt="preview"
+            />
           </div>
         )}
         <button className="c-form__button" type="submit">

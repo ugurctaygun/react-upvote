@@ -25,6 +25,8 @@
         min-width: 220px;
     }
     &__info{
+        display: flex;
+        flex-direction: column;
         h4{
             margin: 5px 0;
             font-size: 24px;
@@ -37,7 +39,9 @@
             }
         }img{
             max-width: 250px;
-            margin-top: 15px ;
+            margin: 15px 0;
+            border: 1px solid $primaryBorderColor;
+        border-radius: 5px;
         }
     }
     &__vote{

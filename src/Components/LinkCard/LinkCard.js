@@ -20,7 +20,7 @@ const LinkCard = ({ ...props }) => {
           </a>
           {props.link.previewUrl && (
             <img
-              src={`http://localhost:5000${props.link.previewUrl}`}
+              src={`https://upvote-case-backend.herokuapp.com${props.link.previewUrl}`}
               alt="preview"
             />
           )}
