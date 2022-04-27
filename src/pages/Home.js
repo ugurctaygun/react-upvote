@@ -10,8 +10,6 @@ import Filter from "../Components/Filter/Filter";
 import Pagination from "../Components/Pagination/Pagination";
 import Modal from "../Components/Modal/Modal";
 
-let PageSize = 5;
-
 function Home() {
   const { linkList } = useSelector((state) => state.links.value);
   const dispatch = useDispatch();
@@ -20,8 +18,9 @@ function Home() {
   const [linkItem, setLinkItem] = useState({});
 
   const currentLinkList = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
+    let itemPerPage = 5;
+    const firstPageIndex = (currentPage - 1) * itemPerPage;
+    const lastPageIndex = firstPageIndex + itemPerPage;
     return linkList.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, linkList]);
 
@@ -62,7 +61,7 @@ function Home() {
       <SubmitNavigation />
       {linkList.length > 0 && (
         <div className="o-container__cards">
-          <Filter />
+          {linkList.length > 1 && <Filter />}
           {currentLinkList.map((linkItem) => (
             <LinkCard
               key={linkItem.id}
@@ -77,7 +76,7 @@ function Home() {
             className="pagination-bar"
             currentPage={currentPage}
             totalCount={linkList.length}
-            pageSize={PageSize}
+            pageSize={5}
             onPageChange={(page) => setCurrentPage(page)}
           />
           <Modal

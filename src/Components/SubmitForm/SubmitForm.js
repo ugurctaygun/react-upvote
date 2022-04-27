@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { updateState } from "../../Features/LinkSlice";
@@ -9,6 +10,46 @@ import "react-toastify/dist/ReactToastify.css";
 function SubmitForm() {
   const links = useSelector((state) => state.links.value);
   const dispatch = useDispatch();
+  const [preview, setPreview] = useState(null);
+  const [urlInput, setUrlInput] = useState("");
+
+  function isValidURL(string) {
+    var res = string.match(
+      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+    );
+    return res !== null;
+  }
+
+  const handlePreview = (urlFromInput) => {
+    let parsedUrl;
+    fetch("http://localhost:5000/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        url: urlFromInput,
+      }),
+    }).then(function (res) {
+      res.json().then(function (data) {
+        if (data.url) {
+          parsedUrl = data.url.substr(1);
+        }
+        setPreview(parsedUrl);
+      });
+    });
+  };
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      console.log(urlInput);
+      if (urlInput && isValidURL(urlInput)) {
+        handlePreview(urlInput);
+      }
+    }, 3000);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [urlInput]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,7 +60,11 @@ function SubmitForm() {
       name: linkName.value,
       url: linkUrl.value,
       votes: 0,
+      previewUrl: preview,
     };
+    toast.success(`${linkName.value} added.`, {
+      className: "c-toast c-toast--success",
+    });
     dispatch(
       updateState({
         ...links,
@@ -28,9 +73,7 @@ function SubmitForm() {
     );
     linkName.value = "";
     linkUrl.value = "";
-    toast.success(`${linkName.value} added.`, {
-      className: "c-toast c-toast--success",
-    });
+    setPreview(null);
   };
 
   return (
@@ -69,8 +112,15 @@ function SubmitForm() {
             minLength={5}
             placeholder="e.g https://www.google.com/"
             required
+            onChange={(e) => setUrlInput(e.target.value)}
           />
         </div>
+        {preview && (
+          <div className="c-form__section c-form__preview">
+            <h3>Link Preview</h3>
+            <img src={`http://localhost:5000${preview}`} alt="preview" />
+          </div>
+        )}
         <button className="c-form__button" type="submit">
           ADD
         </button>

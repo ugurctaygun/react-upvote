@@ -4,8 +4,9 @@
     max-width: 30vw;
     min-width: 450px;
     @media (max-width: 1000px) {
-      padding: 20px 0;
+      padding: 20px;
       max-width: 100%;
+      min-width: 350px;
     }
     &__cards{
       margin: 25px 0;
