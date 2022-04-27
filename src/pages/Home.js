@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import AnimatedPage from "../Components/AnimatedPage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Filter from "../Components/Filter/Filter";
 
 function Home() {
   const { linkList } = useSelector((state) => state.links.value);
@@ -41,6 +42,7 @@ function Home() {
       />
       <SubmitNavigation />
       <div className="o-container__cards">
+        <Filter />
         {linkList.map((linkItem) => (
           <LinkCard
             key={linkItem.id}

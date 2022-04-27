@@ -1,7 +1,6 @@
 - filter from state
 - pagination from state
 - modal for delete
-- toast for status (state)
 
 - unit test
 - node express server

@@ -29,10 +29,26 @@ export const linkSlice = createSlice({
         item.votes -= 1;
       }
     },
+    sortDescending: (state) => {
+      state.value.linkList.sort(
+        (a, b) => parseFloat(b.votes) - parseFloat(a.votes)
+      );
+    },
+    sortAscending: (state) => {
+      state.value.linkList.sort(
+        (a, b) => parseFloat(a.votes) - parseFloat(b.votes)
+      );
+    },
   },
 });
 
-export const { updateState, removeLink, upvoteLink, downvoteLink } =
-  linkSlice.actions;
+export const {
+  updateState,
+  removeLink,
+  upvoteLink,
+  downvoteLink,
+  sortDescending,
+  sortAscending,
+} = linkSlice.actions;
 
 export default linkSlice.reducer;
