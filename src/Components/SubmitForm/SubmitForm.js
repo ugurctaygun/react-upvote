@@ -19,7 +19,7 @@ function SubmitForm() {
     dispatch(
       updateState({
         ...links,
-        linkList: [...links.linkList, linkObject],
+        linkList: [linkObject, ...links.linkList],
       })
     );
   };
@@ -35,7 +35,7 @@ function SubmitForm() {
         </div>
         <div className="c-form__section">
           <label>Link Url</label>
-          <input name="url" type="text" placeholder="e.g testo" />
+          <input name="url" type="url" placeholder="e.g testo" />
         </div>
         <button type="submit">Add</button>
       </form>

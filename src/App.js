@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <main>
+    <>
       <BrowserRouter>
         <Header />
         <Routes>
@@ -14,7 +14,7 @@ const App = () => {
           <Route path="/submit" element={<Submit />} />
         </Routes>
       </BrowserRouter>
-    </main>
+    </>
   );
 };
 

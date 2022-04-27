@@ -6,7 +6,7 @@ const ltrAnimations = {
   exit: { opacity: 0, x: -100 },
 };
 
-const rtlnimations = {
+const rtlAnimations = {
   initial: { opacity: 0, x: -100 },
   animate: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: 100 },
@@ -15,7 +15,7 @@ const rtlnimations = {
 const AnimatedPage = ({ children, direction }) => {
   return (
     <motion.section
-      variants={direction === "ltr" ? ltrAnimations : rtlnimations}
+      variants={direction === "ltr" ? ltrAnimations : rtlAnimations}
       initial="initial"
       animate="animate"
       exit="exit"

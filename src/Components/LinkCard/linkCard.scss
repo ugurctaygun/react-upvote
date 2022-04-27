@@ -1,0 +1,67 @@
+.c-card{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    position: relative;
+    &__vote-box{
+        padding: 25px;
+        border: 1px solid $primaryBorderColor;
+        border-radius: 5px;
+        background-color: $secondaryBackgroundColor;
+        margin-right: 25px;  
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        strong{
+            font-size: 36px;
+        }
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__info{
+        h4{
+            margin: 5px 0;
+            font-size: 24px;
+        }
+        span{
+            color: $secondaryTextColor;
+        }
+    }
+    &__vote{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        cursor: pointer;
+        font-size: 14px;
+        color: $secondaryTextColor;
+        svg{
+            fill: $secondaryTextColor;
+        }
+    }
+    &__delete{
+        display: none;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+       cursor: pointer;
+        svg{
+            padding: 2px;
+            border: 1px solid $primaryBorderColor;
+            border-radius: 50%;
+            box-shadow: 1px 2px 8px 0px rgba(0,0,0,0.53);
+        }
+    }
+    &:hover{
+        background-color: $primaryBackgroundColor;
+        border: 1px solid $secondaryBackgroundColor;
+        border-radius: 5px;
+        .c-card__delete{
+            display: block;
+        }
+    }
+}

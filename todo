@@ -9,7 +9,6 @@
 - modal for delete
 - toast for status (state)
 
-- framer motion sliding routes
 - unit test
 - node express server
 - pupeteer
