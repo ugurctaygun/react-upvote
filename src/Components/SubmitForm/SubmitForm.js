@@ -12,6 +12,7 @@ function SubmitForm() {
   const dispatch = useDispatch();
   const [preview, setPreview] = useState(null);
   const [urlInput, setUrlInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function isValidURL(string) {
     var res = string.match(
@@ -43,7 +44,9 @@ function SubmitForm() {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (urlInput && isValidURL(urlInput)) {
+        setLoading(true);
         handlePreview(urlInput);
+        setLoading(false);
       }
     }, 3000);
 
@@ -123,9 +126,15 @@ function SubmitForm() {
             />
           </div>
         )}
-        <button className="c-form__button" type="submit">
-          ADD
-        </button>
+        {!loading ? (
+          <button className="c-form__button" type="submit">
+            ADD
+          </button>
+        ) : (
+          <button className="c-form__button" disabled>
+            Loading Preview ...
+          </button>
+        )}
       </form>
     </>
   );
