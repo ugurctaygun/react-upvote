@@ -1,0 +1,61 @@
+.c-modal{
+    &__overlay{
+        background: gray;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+        
+    }
+    &__content{
+        background-color: white;
+        min-width: 500px;
+        position: absolute;
+        border: 1px solid $primaryTextColor;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    &__header{
+        background-color: $primaryTextColor;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        padding:0 15px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding:0 15px 25px 0;
+        h4{
+            margin: 0;
+            font-size: 28px;
+        }
+    }
+    &__buttons{
+        padding:0 15px 25px;
+        display: flex;
+        justify-content: center;
+        button{
+            display: block;
+            padding: 15px 35px;
+            margin: 0 10px;
+            background-color: $primaryTextColor;
+            color: white;
+            font-weight: bold;
+            outline:none;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &:hover{
+                background-color: white;
+                color: $primaryTextColor;
+                border: 2px solid $primaryBorderColor;
+            }
+        }
+    }
+}
