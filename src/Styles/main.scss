@@ -4,7 +4,9 @@ body{
 
 @import './theme';
 @import "./container.scss";
+@import "./toast.scss";
 
 @import "../Components/Header/header.scss";
 @import "../Components/SubmitNavigation/submitNavigation.scss";
-@import "../Components/LinkCard/linkCard.scss"
+@import "../Components/LinkCard/linkCard.scss";
+@import "../Components/SubmitForm/submitForm.scss"

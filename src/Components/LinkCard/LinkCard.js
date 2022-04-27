@@ -28,7 +28,7 @@ const LinkCard = ({ ...props }) => {
         </div>
         <div
           className="c-card__delete"
-          onClick={() => props.delete(props.link.id)}
+          onClick={() => props.delete(props.link)}
         >
           <FontAwesomeIcon
             icon={faCircleMinus}

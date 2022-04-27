@@ -1,0 +1,14 @@
+.c-toast{
+    top: 50px;
+    svg{
+        display: none;
+    }
+    &--success{
+        background-color: #ddf9d3;
+        color: #5aad5a;
+    }
+    &--danger{
+        background-color: #ac1d1d;
+        color: white;
+    }
+}
