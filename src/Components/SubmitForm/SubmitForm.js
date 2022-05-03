@@ -38,9 +38,9 @@ function SubmitForm() {
           parsedUrl = data.url.substr(1);
         }
         setPreview(parsedUrl);
-        setLoading(false);
       });
     });
+    setLoading(false);
   };
 
   useEffect(() => {
