@@ -22,8 +22,9 @@ function SubmitForm() {
   }
 
   const handlePreview = (urlFromInput) => {
+    setLoading(true);
     let parsedUrl;
-    fetch("https://upvote-case-backend.herokuapp.com/api", {
+    fetch("http://localhost:5000/api", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,6 +38,7 @@ function SubmitForm() {
           parsedUrl = data.url.substr(1);
         }
         setPreview(parsedUrl);
+        setLoading(false);
       });
     });
   };
@@ -44,9 +46,7 @@ function SubmitForm() {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (urlInput && isValidURL(urlInput)) {
-        setLoading(true);
         handlePreview(urlInput);
-        setLoading(false);
       }
     }, 3000);
 
@@ -120,10 +120,7 @@ function SubmitForm() {
         {preview && (
           <div className="c-form__section c-form__preview">
             <h3>Link Preview</h3>
-            <img
-              src={`https://upvote-case-backend.herokuapp.com${preview}`}
-              alt="preview"
-            />
+            <img src={`http://localhost:5000${preview}`} alt="preview" />
           </div>
         )}
         {!loading ? (
